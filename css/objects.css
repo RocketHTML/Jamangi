@@ -60,7 +60,11 @@ body {
     grid-template-rows: 2fr 1fr;
     grid-gap: 10px;
 
+}
+
+.card.frame .card.img {
     top: calc(var(--frame-top) * -1);
+    
 }
 
 .card.img:hover{
