@@ -10,7 +10,7 @@ populate()
 
 function drag(){
     console.log(this.value)
-    roo.style.setProperty('--frame-top', this.value + '%')
+    roo.style.setProperty('--frame-item-top', this.value + '%')
 }
 
 function populate(){

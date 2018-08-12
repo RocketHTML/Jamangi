@@ -6,9 +6,12 @@
     --lime: #CBDD80;
     --vanilla: #D7CEB2;
     
-    --frame-top: 0%;
-    --frame-width: 90%;
-    --frame-height: 300px;
+    --frame-item-top: 0%;
+
+    --frame-top: 10%;
+    --frame-width: 98%;
+    --frame-height: 400px;
+    --frame-left: 1%;
 
     --cart-top: 0%;
 
@@ -63,8 +66,8 @@ body {
 }
 
 .card.frame .card.img {
-    top: calc(var(--frame-top) * -1);
-    
+    top: calc(var(--frame-item-top) * -1);
+
 }
 
 .card.img:hover{
@@ -75,7 +78,8 @@ body {
 }
 
 .card.frame {
-    left: 1%;
+    top: var(--frame-top);
+    left: var(--frame-left);
     width: var(--frame-width);
     height: var(--frame-height);
     padding-right: 50px;
