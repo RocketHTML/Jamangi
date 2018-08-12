@@ -1,0 +1,148 @@
+:root {
+    --business-green: #86C46B;
+    --business-lightgreen: #DDEFAE;
+    --plasma-green: #77A310;
+    --sea-green: #42BF2F;
+    --lime: #CBDD80;
+    --vanilla: #D7CEB2;
+    
+    --frame-top: 0%;
+    --frame-width: 90%;
+    --frame-height: 300px;
+
+    --cart-top: 0%;
+
+    --slider-width: 25%;
+    --slider-height: 100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.debug {
+    display: grid;
+    grid-gap: 30px;
+}
+
+body {
+    background: var(--business-green);
+}
+
+.card {
+    background: var(--business-lightgreen);
+    border: 1px solid var(--lime);
+    border-radius: 10px;
+    cursor: pointer;
+}
+    .card.frame {
+        cursor: default;
+    }
+
+.card.slider.item{
+    height: var(--slider-height);
+    width: var(--slider-width);
+}
+
+.card.slider:hover{
+    background-color: var(--lime);
+}
+
+.card.img{
+    height: 200px; /* needs to be screen dependant*/
+    width: 150px;
+    padding: 20px;
+    margin: 20px;
+
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-gap: 10px;
+
+    top: calc(var(--frame-top) * -1);
+}
+
+.card.img:hover{
+    background-color: var(--lime);
+}
+.card.img > .card {
+    opacity: .9;
+}
+
+.card.frame {
+    left: 1%;
+    width: var(--frame-width);
+    height: var(--frame-height);
+    padding-right: 50px;
+
+    background: var(--plasma-green);
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /*grid-gap: 30px;*/
+
+}
+
+.scroller {
+    -webkit-appearance: none;
+    outline: none;
+    opacity: 0.7;
+    transform: rotate(90deg);
+    border-radius: 35%;
+    overflow: hidden;
+    padding-top:1px;
+    padding-bottom:1px;
+}
+
+.scroller::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 5px;
+    background: gray;
+    border-radius: 30%;
+    opacity: .7;
+}
+
+.slider .scroller {
+    width: var(--slider-height);
+    left: calc(var(--slider-height) / 2 * -1 + 20px + 100%);
+    top: calc(var(--slider-height) / 2);
+}
+
+.frame .scroller {
+    position: absolute;
+    right: -3%;
+
+    width: 250px;
+    /*border: 1px solid red;*/
+    /*left: calc(var(--frame-height) / 2 * -1 + 20px + 100%);*/
+    top: calc(var(--frame-height) / 2);
+}
+
+
+
+/* media edits */
+
+@media (min-width: 800px){
+    .card.img {
+
+    }
+    .card.frame {
+        padding-right: 50px;
+        box-sizing: border-box;
+    }
+
+    .frame .scroller {
+        right: -8%;
+    }
+
+}
+
+@media (min-width: 1000px){
+    .card.frame{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
